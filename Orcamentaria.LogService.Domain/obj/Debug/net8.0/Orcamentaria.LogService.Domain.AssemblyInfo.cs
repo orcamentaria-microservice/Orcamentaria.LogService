@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Orcamentaria.LogService.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e7fb98df520f67214e6d8af0f56e7b7d6d014ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("Orcamentaria.LogService.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Orcamentaria.LogService.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

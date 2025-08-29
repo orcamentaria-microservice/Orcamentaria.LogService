@@ -10,9 +10,9 @@
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="3.4.0" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.30.0" />
-    <PackageReference Include="Orcamentaria.Lib.Application" Version="1.5.4" />
-    <PackageReference Include="Orcamentaria.Lib.Domain" Version="9.4.1" />
-    <PackageReference Include="Orcamentaria.Lib.Infrastructure" Version="4.3.9" />
+    <PackageReference Include="Orcamentaria.Lib.Application" Version="1.7.1" />
+    <PackageReference Include="Orcamentaria.Lib.Domain" Version="9.5.0" />
+    <PackageReference Include="Orcamentaria.Lib.Infrastructure" Version="4.5.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.2" />
 	<PackageReference Include="RabbitMQ" Version="3.6.2" />
 	<PackageReference Include="RabbitMQ.Client" Version="7.1.2" />

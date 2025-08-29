@@ -319,7 +319,7 @@
           }
         }
       },
-      "Orcamentaria.Lib.Domain/9.4.1": {
+      "Orcamentaria.Lib.Domain/9.5.0": {
         "type": "package",
         "dependencies": {
           "FluentValidation": "12.0.0",
@@ -943,14 +943,14 @@
         "packageIcon.png"
       ]
     },
-    "Orcamentaria.Lib.Domain/9.4.1": {
-      "sha512": "RovoIM3S/jB74SaRVBYVUipXijk0DPfHQmmI4koosBCfVXoScJ0JdZelML8VNGuDLYKgc8S2Yi/4u8+mvaAaTA==",
+    "Orcamentaria.Lib.Domain/9.5.0": {
+      "sha512": "862y5W5nhNFjFIffxJkeQaSLBKNRmiDrkb12IthAEGDDjkKg1BbKAbxx6fHcaWxxf2Po/jg54bdONqa2ANFTvg==",
       "type": "package",
-      "path": "orcamentaria.lib.domain/9.4.1",
+      "path": "orcamentaria.lib.domain/9.5.0",
       "files": [
         ".nupkg.metadata",
         "lib/net8.0/Orcamentaria.Lib.Domain.dll",
-        "orcamentaria.lib.domain.9.4.1.nupkg.sha512",
+        "orcamentaria.lib.domain.9.5.0.nupkg.sha512",
         "orcamentaria.lib.domain.nuspec"
       ]
     },
@@ -1224,7 +1224,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "MongoDB.Driver >= 3.4.0",
-      "Orcamentaria.Lib.Domain >= 9.4.1"
+      "Orcamentaria.Lib.Domain >= 9.5.0"
     ]
   },
   "packageFolders": {
@@ -1285,7 +1285,7 @@
           },
           "Orcamentaria.Lib.Domain": {
             "target": "Package",
-            "version": "[9.4.1, )"
+            "version": "[9.5.0, )"
           }
         },
         "imports": [

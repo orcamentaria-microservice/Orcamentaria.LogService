@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Orcamentaria.LogService.API.props" />
-</Project>

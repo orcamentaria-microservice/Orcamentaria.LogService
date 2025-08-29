@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cjBX8ht2Ef4=",
+  "dgSpecHash": "rIzFyl62HU4=",
   "success": true,
   "projectFilePath": "C:\\Users\\mafea\\OneDrive\\Documents\\Projetos Pessoais\\orcamentaria-microservice\\Orcamentaria.LogService\\Orcamentaria.LogService.API\\Orcamentaria.LogService.API.csproj",
   "expectedPackageFiles": [
@@ -66,9 +66,9 @@
     "C:\\Users\\mafea\\.nuget\\packages\\mongodb.driver\\3.4.0\\mongodb.driver.3.4.0.nupkg.sha512",
     "C:\\Users\\mafea\\.nuget\\packages\\mongodb.driver.core\\2.30.0\\mongodb.driver.core.2.30.0.nupkg.sha512",
     "C:\\Users\\mafea\\.nuget\\packages\\mongodb.libmongocrypt\\1.12.0\\mongodb.libmongocrypt.1.12.0.nupkg.sha512",
-    "C:\\Users\\mafea\\.nuget\\packages\\orcamentaria.lib.application\\1.5.4\\orcamentaria.lib.application.1.5.4.nupkg.sha512",
-    "C:\\Users\\mafea\\.nuget\\packages\\orcamentaria.lib.domain\\9.4.1\\orcamentaria.lib.domain.9.4.1.nupkg.sha512",
-    "C:\\Users\\mafea\\.nuget\\packages\\orcamentaria.lib.infrastructure\\4.3.9\\orcamentaria.lib.infrastructure.4.3.9.nupkg.sha512",
+    "C:\\Users\\mafea\\.nuget\\packages\\orcamentaria.lib.application\\1.7.1\\orcamentaria.lib.application.1.7.1.nupkg.sha512",
+    "C:\\Users\\mafea\\.nuget\\packages\\orcamentaria.lib.domain\\9.5.0\\orcamentaria.lib.domain.9.5.0.nupkg.sha512",
+    "C:\\Users\\mafea\\.nuget\\packages\\orcamentaria.lib.infrastructure\\4.5.6\\orcamentaria.lib.infrastructure.4.5.6.nupkg.sha512",
     "C:\\Users\\mafea\\.nuget\\packages\\rabbitmq\\3.6.2\\rabbitmq.3.6.2.nupkg.sha512",
     "C:\\Users\\mafea\\.nuget\\packages\\rabbitmq.client\\7.1.2\\rabbitmq.client.7.1.2.nupkg.sha512",
     "C:\\Users\\mafea\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",

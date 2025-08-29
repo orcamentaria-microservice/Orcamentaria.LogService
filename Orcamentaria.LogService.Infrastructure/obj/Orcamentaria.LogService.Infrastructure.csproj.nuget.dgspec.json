@@ -58,7 +58,7 @@
             },
             "Orcamentaria.Lib.Domain": {
               "target": "Package",
-              "version": "[9.4.1, )"
+              "version": "[9.5.0, )"
             }
           },
           "imports": [
@@ -139,7 +139,7 @@
             },
             "Orcamentaria.Lib.Domain": {
               "target": "Package",
-              "version": "[9.4.1, )"
+              "version": "[9.5.0, )"
             }
           },
           "imports": [
