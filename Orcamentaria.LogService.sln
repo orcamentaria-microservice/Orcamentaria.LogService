@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orcamentaria.LogService.API", "Orcamentaria.LogService.API\Orcamentaria.LogService.API.csproj", "{1A944BA3-4F6E-4658-A9AA-BBED00167079}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orcamentaria.LogService.Infrastructure", "Orcamentaria.LogService.Infrastructure\Orcamentaria.LogService.Infrastructure.csproj", "{68009CD0-102D-4E2A-AFA3-15B181BD8AF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orcamentaria.LogService.Domain", "Orcamentaria.LogService.Domain\Orcamentaria.LogService.Domain.csproj", "{4F7F244D-3ED9-46AD-810D-8AB0E099E32B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orcamentaria.LogService.Application", "Orcamentaria.LogService.Application\Orcamentaria.LogService.Application.csproj", "{2B099FB6-9BF8-4DA2-BF7C-D4A063E2DA8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A944BA3-4F6E-4658-A9AA-BBED00167079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A944BA3-4F6E-4658-A9AA-BBED00167079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A944BA3-4F6E-4658-A9AA-BBED00167079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A944BA3-4F6E-4658-A9AA-BBED00167079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68009CD0-102D-4E2A-AFA3-15B181BD8AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68009CD0-102D-4E2A-AFA3-15B181BD8AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68009CD0-102D-4E2A-AFA3-15B181BD8AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68009CD0-102D-4E2A-AFA3-15B181BD8AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7F244D-3ED9-46AD-810D-8AB0E099E32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7F244D-3ED9-46AD-810D-8AB0E099E32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7F244D-3ED9-46AD-810D-8AB0E099E32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7F244D-3ED9-46AD-810D-8AB0E099E32B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B099FB6-9BF8-4DA2-BF7C-D4A063E2DA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B099FB6-9BF8-4DA2-BF7C-D4A063E2DA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B099FB6-9BF8-4DA2-BF7C-D4A063E2DA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B099FB6-9BF8-4DA2-BF7C-D4A063E2DA8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45945FE7-9CFD-483A-B37B-FF47FC38D189}
+	EndGlobalSection
+EndGlobal

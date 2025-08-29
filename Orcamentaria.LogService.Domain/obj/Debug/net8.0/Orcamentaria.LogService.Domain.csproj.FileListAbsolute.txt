@@ -1,0 +1,12 @@
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\Orcamentaria.LogService.Domain.csproj.AssemblyReference.cache
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\Orcamentaria.LogService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\Orcamentaria.LogService.Domain.AssemblyInfoInputs.cache
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\Orcamentaria.LogService.Domain.AssemblyInfo.cs
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\Orcamentaria.LogService.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\bin\Debug\net8.0\Orcamentaria.LogService.Domain.deps.json
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\bin\Debug\net8.0\Orcamentaria.LogService.Domain.dll
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\bin\Debug\net8.0\Orcamentaria.LogService.Domain.pdb
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\Orcamentaria.LogService.Domain.dll
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\refint\Orcamentaria.LogService.Domain.dll
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\Orcamentaria.LogService.Domain.pdb
+C:\Users\mafea\OneDrive\Documents\Projetos Pessoais\orcamentaria-microservice\Orcamentaria.LogService\Orcamentaria.LogService.Domain\obj\Debug\net8.0\ref\Orcamentaria.LogService.Domain.dll
