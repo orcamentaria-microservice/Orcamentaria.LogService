@@ -1,48 +1,64 @@
-﻿using Orcamentaria.Lib.Domain.Exceptions;
-using Orcamentaria.LogService.Domain.HostedServices;
-using RabbitMQ.Client.Events;
+﻿using Microsoft.Extensions.Options;
+using Orcamentaria.Lib.Domain.Exceptions;
+using Orcamentaria.Lib.Domain.Models.Configurations;
+using Orcamentaria.LogService.Domain.Services;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using System.Text;
 
-namespace Orcamentaria.LogService.Application.Services
+public sealed class RabbitMqConsumeService : IMessageBrokerConsumerService
 {
-    public class RabbitMqConsumeService : IConsumerBrokerHostedService
+    private readonly MessageBrokerConfiguration _messageBrokerConfiguration;
+    private readonly CancellationToken _stoppingToken;
+
+    private IConnection? _connection;
+    private IChannel? _channel;
+
+    public RabbitMqConsumeService(IOptions<MessageBrokerConfiguration> options)
     {
-        private readonly IChannel _channel;
-        public RabbitMqConsumeService(string host)
-        {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(host))
-                    throw new ConfigurationException("Informe o host do RabbitMq.");
+        if (string.IsNullOrWhiteSpace(options.Value.Host))
+            throw new ConfigurationException("Informe o host do RabbitMq.");
 
-                var factory = new ConnectionFactory { HostName = host };
-                var connection = factory.CreateConnectionAsync().Result;
-                var _channel = connection.CreateChannelAsync().Result;
-            }
-            catch (DefaultException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new UnexpectedException(ex.Message, ex);
-            }
-        }
+        _messageBrokerConfiguration = options.Value;
+    }
 
-        public async Task HandleBasicDeliverAsync(string queueConsume)
+    public async Task HandleBasicDeliverAsync(
+        string queueConsume,
+        CancellationToken stoppingToken, 
+        Func<string, Task<bool>> processMessage)
+    {
+        try 
         {
+            var factory = new ConnectionFactory
+            {
+                HostName = _messageBrokerConfiguration.Host,
+            };
+
+            _connection = await factory.CreateConnectionAsync(_stoppingToken);
+            _channel = await _connection.CreateChannelAsync();
+
             var consumer = new AsyncEventingBasicConsumer(_channel);
-
-            consumer.ReceivedAsync += async (model, eventArgs) =>
+            consumer.ReceivedAsync += async (_, eventArgs) =>
             {
                 var body = eventArgs.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
 
-                await _channel.BasicAckAsync(deliveryTag: eventArgs.DeliveryTag, multiple: false);
+                if(await processMessage(message))
+                    await _channel.BasicAckAsync(deliveryTag: eventArgs.DeliveryTag, multiple: false);
             };
 
             await _channel.BasicConsumeAsync(queue: queueConsume, autoAck: false, consumer: consumer);
+
+            while (!_stoppingToken.IsCancellationRequested)
+                await Task.Delay(1000, _stoppingToken);
+        }
+        catch (DefaultException)
+        {
+            throw;
+        }
+        catch (Exception ex)
+        {
+            throw new UnexpectedException(ex.Message, ex);
         }
     }
 }

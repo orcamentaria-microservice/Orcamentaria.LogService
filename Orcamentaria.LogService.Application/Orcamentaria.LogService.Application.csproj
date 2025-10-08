@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Orcamentaria.LogService.Domain\Orcamentaria.LogService.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="HostedServices\" />
-  </ItemGroup>
-
 </Project>
