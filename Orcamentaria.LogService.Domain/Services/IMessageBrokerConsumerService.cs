@@ -5,6 +5,6 @@
         Task HandleBasicDeliverAsync(
             string queueConsume, 
             CancellationToken stoppingToken, 
-            Func<string, Task<bool>> processMessage);
+            Func<string, Task> processMessage);
     }
 }

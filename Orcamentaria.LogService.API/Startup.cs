@@ -37,11 +37,9 @@ namespace Orcamentaria.LogService.API
 
                 services.AddScoped<IMessageBrokerConsumerService, RabbitMqConsumeService>();
 
-                var messageBrokerConfig = Configuration
-                    .GetSection("MessageBroker")
-                    .Get<MessageBrokerConfiguration>();
+                var messageBrokerConfig = Configuration.GetSection("MessageBroker").Get<MessageBrokerConfiguration>();
 
-                services.AddKeyedSingleton<IMessageBrokerProcessorService, ErrorMessageProcessorService>(messageBrokerConfig?.ErrorQueue);
+                services.AddKeyedScoped<IMessageBrokerProcessorService, ErrorMessageProcessorService>(messageBrokerConfig?.ErrorQueue);
 
                 services.AddHostedService<ErrorConsumerHostedService>();
 

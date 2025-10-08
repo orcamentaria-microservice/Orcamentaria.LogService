@@ -2,6 +2,6 @@
 {
     public interface IMessageBrokerProcessorService
     {
-        Task<bool> ProcessAsync(string message);
+        Task ProcessAsync(string message);
     }
 }
