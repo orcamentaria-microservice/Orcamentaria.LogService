@@ -1,12 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection.Extensions;
 using MongoDB.Driver;
 using Orcamentaria.Lib.Domain.Models.Configurations;
+using Orcamentaria.Lib.Domain.Services;
 using Orcamentaria.Lib.Infrastructure;
 using Orcamentaria.LogService.Application.HostedServices;
 using Orcamentaria.LogService.Application.Services;
 using Orcamentaria.LogService.Domain.Repositories;
-using Orcamentaria.LogService.Domain.Services;
 using Orcamentaria.LogService.Infrastructure.Contexts;
 using Orcamentaria.LogService.Infrastructure.Repositories;
 
@@ -21,29 +20,28 @@ namespace Orcamentaria.LogService.API
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            Configuration = CommonDI.ResolveConfigs(_serviceName, services, Configuration);
+            services.Replace(ServiceDescriptor.Singleton(Configuration));
+
             CommonDI.AddServiceRegistryHosted(services, Configuration);
 
             CommonDI.ResolveCommonServices(_serviceName, _apiVersion, services, Configuration, () =>
             {
-                services.Configure<MessageBrokerConfiguration>(Configuration.GetSection("MessageBroker"));
-
                 services.AddScoped<IMongoClient>(_ => new MongoClient(Configuration.GetConnectionString("DefaultConnection")));
+                services.AddScoped<MongoContext>();
+                
+                services.Configure<MessageBrokerConfiguration>(Configuration.GetSection("MessageBrokerConfiguration"));
 
                 services.AddScoped<IExceptionLogRepository, ExceptionLogRepository>();
+                services.AddKeyedScoped<IMessageBrokerProcessorService, ErrorCriticalMessageProcessorService>("error.critical");
+                services.AddKeyedScoped<IMessageBrokerProcessorService, ErrorInfoMessageProcessorService>("error.info");
 
-                services.AddScoped<IMessageBrokerConsumerService, RabbitMqConsumeService>();
-
-                var messageBrokerConfig = Configuration.GetSection("MessageBroker").Get<MessageBrokerConfiguration>();
-
-                services.AddKeyedScoped<IMessageBrokerProcessorService, ErrorMessageProcessorService>(messageBrokerConfig?.ErrorQueue);
-
-                services.AddHostedService<ErrorConsumerHostedService>();
-
-                services.AddScoped<MongoContext>();
+                services.AddHostedService<ErrorCriticalConsumerHostedService>();
+                services.AddHostedService<ErrorInfoConsumerHostedService>();
             });
         }
 

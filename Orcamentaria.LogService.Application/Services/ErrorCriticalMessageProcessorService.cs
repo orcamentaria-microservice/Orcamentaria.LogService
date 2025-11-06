@@ -2,18 +2,17 @@
 using Orcamentaria.Lib.Domain.Exceptions;
 using Orcamentaria.Lib.Domain.Models.Exceptions;
 using Orcamentaria.Lib.Domain.Models.Logs;
+using Orcamentaria.Lib.Domain.Services;
 using Orcamentaria.LogService.Domain.Repositories;
-using Orcamentaria.LogService.Domain.Services;
-using System;
 using System.Text.Json;
 
 namespace Orcamentaria.LogService.Application.Services
 {
-    public class ErrorMessageProcessorService : IMessageBrokerProcessorService
+    public class ErrorCriticalMessageProcessorService : IMessageBrokerProcessorService
     {
         private readonly IExceptionLogRepository _exceptionLogRepository;
 
-        public ErrorMessageProcessorService(IExceptionLogRepository exceptionLogRepository)
+        public ErrorCriticalMessageProcessorService(IExceptionLogRepository exceptionLogRepository)
         {
             _exceptionLogRepository = exceptionLogRepository;
         }
