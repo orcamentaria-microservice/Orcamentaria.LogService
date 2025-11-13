@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using Orcamentaria.Lib.Domain.Models.Configurations;
 using Orcamentaria.Lib.Domain.Services;
 using Orcamentaria.Lib.Infrastructure;
+using Orcamentaria.Lib.Infrastructure.Configures;
 using Orcamentaria.LogService.Application.HostedServices;
 using Orcamentaria.LogService.Application.Services;
 using Orcamentaria.LogService.Domain.Repositories;
@@ -24,13 +25,18 @@ namespace Orcamentaria.LogService.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            Configuration = CommonDI.ResolveConfigs(_serviceName, services, Configuration);
+            Configuration = services.ResolveConfigs(Configuration, _serviceName);
+
             services.Replace(ServiceDescriptor.Singleton(Configuration));
 
-            CommonDI.AddServiceRegistryHosted(services, Configuration);
+            services.AddServiceRegistryHosted(Configuration);
 
-            CommonDI.ResolveCommonServices(_serviceName, _apiVersion, services, Configuration, () =>
-            {
+            services.ResolveCommonServices(
+                configuration: Configuration,
+                serviceName: _serviceName,
+                apiVersion: _apiVersion,
+                customServices: () =>
+                {
                 services.AddScoped<IMongoClient>(_ => new MongoClient(Configuration.GetConnectionString("DefaultConnection")));
                 services.AddScoped<MongoContext>();
                 
@@ -46,7 +52,7 @@ namespace Orcamentaria.LogService.API
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-            => CommonDI.ConfigureCommon(_serviceName, _apiVersion, app, env);
+            => app.ConfigureCommon(env, _serviceName, _apiVersion);
 
     }
 }
