@@ -168,6 +168,19 @@ O acesso é feito por `MongoContext` (que expõe `IMongoCollection<ExceptionLog>
 
 ---
 
+## Configuração local
+
+Nenhum valor real deve existir nos arquivos versionados. Configure via `dotnet user-secrets` ou variáveis de ambiente:
+
+```bash
+dotnet user-secrets init --project Orcamentaria.LogService.API
+dotnet user-secrets set "BOOTSTRAPSECRET" "<valor-do-bootstrapsecret>" --project Orcamentaria.LogService.API
+```
+
+Ou crie `Orcamentaria.LogService.API/appsettings.Development.json` (já ignorado pelo `.gitignore`) com os valores locais. Nunca commite esse arquivo.
+
+---
+
 ## ▶️ Como Executar
 
 ### Pré-requisitos
